@@ -1,1 +1,66 @@
-building...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leak Detector Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="language-switch">
+    <button onclick="setLanguage('fr')">Français</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+
+  <h1 id="title">Leak Detector – Administration</h1>
+
+  <!-- Section Distribution -->
+  <section>
+    <h2 id="dist_section_title">Distribuer un fichier</h2>
+    <form id="distForm">
+      <div class="field">
+        <label for="fileInput" id="file_input_label">Fichier à distribuer :</label>
+        <input type="file" id="fileInput" name="file" required />
+      </div>
+      <div class="field">
+        <label for="recipients" id="recipients_label">Destinataires :</label>
+        <input type="text" id="recipients" name="recipients" placeholder="ex: alice@example.com, bob@example.com" required />
+      </div>
+      <button type="submit" id="dist_button">Distribuer</button>
+    </form>
+    <div id="dist_status"></div>
+  </section>
+
+  <!-- Section Scan -->
+  <section>
+    <h2 id="scan_section_title">Scanner un fichier suspect</h2>
+    <form id="scanForm">
+      <div class="field">
+        <label for="scanFileInput" id="scan_file_label">Fichier à analyser :</label>
+        <input type="file" id="scanFileInput" name="file" required />
+      </div>
+      <button type="submit" id="scan_button">Analyser</button>
+    </form>
+    <div id="scan_result"></div>
+  </section>
+
+  <!-- Section Past Distributions -->
+  <section>
+    <h2 id="past_section_title">Distributions passées</h2>
+    <table id="distTable">
+      <thead>
+        <tr>
+          <th id="th_id">ID</th>
+          <th id="th_file">Fichier</th>
+          <th id="th_date">Date</th>
+          <th id="th_recipients">Destinataires</th>
+          <th id="th_actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody><!-- contenu généré par JS --></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
